@@ -20,15 +20,14 @@ on:
         required: true
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  hello:
     runs-on: self-hosted
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
+      - name: Say hello
         run: echo Hello, ${{inputs.name}}!
+  check-versions:
+    runs-on: self-hosted
+    steps:
       - name: Check node version
         run: node --version
